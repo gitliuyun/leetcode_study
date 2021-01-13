@@ -11,16 +11,16 @@ public class PhoneNumber {
         return res;
     }
 
-    private void comb(String digits, StringBuilder let, int index) {
+    private void comb(String digits, StringBuilder sb, int index) {
         if (index == digits.length()) {
-            res.add(let.toString());
+            res.add(sb.toString());
             return;
         }
         String toCom = letters[digits.charAt(index) - '0'];
         for (int i = 0; i < toCom.length(); i ++) {
-            let.append(toCom.charAt(i));
-            comb(digits, let, index + 1);
-            let.deleteCharAt(let.length() - 1);
+            sb.append(toCom.charAt(i));
+            comb(digits, sb, index + 1);
+            sb.deleteCharAt(sb.length() - 1);
         }
     }
 
